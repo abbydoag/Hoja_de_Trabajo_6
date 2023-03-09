@@ -112,5 +112,46 @@ public class Main {
         }
         return count;
     }
-        
+    public static void main(String[] args) {
+    	Main app = new Main("ListadoProducto.txt");
+    	Scanner scanner = new Scanner(System.in);
+    	while (true) {
+    		System.out.println("Seleccione una opción:");
+        	System.out.println("1. Agregar un producto");
+        	System.out.println("2. Mostrar la categoría de un producto");
+        	System.out.println("3. Mostrar los datos de los productos");
+        	System.out.println("4. Mostrar los datos de los productos ordenados por tipo");
+        	System.out.println("5. Mostrar el inventario completo");
+        	System.out.println("6. Mostrar las categorías existentes ordenadas por tipo");
+        	System.out.println("0. Salir");
+        	int choice = scanner.nextInt();
+        	
+        	scanner.nextLine();
+        	switch (choice) {
+        	case 1:
+        	app.addProduct(scanner);
+        	break;
+        	case 2:
+        	app.showCategory(scanner);
+        	break;
+        	case 3:
+        	app.showInventory();
+        	break;
+        	case 4:
+        	app.showInventoryByType();
+        	break;
+        	case 5:
+        	app.showCompleteInventory();
+        	break;
+        	case 6:
+        	app.showCategoriesByType();
+        	break;
+        	case 0:
+        	System.exit(0);
+        	default:
+        	System.out.println("Opción inválida.");
+        	break;
+        	}
+    	}
+    }
 }
